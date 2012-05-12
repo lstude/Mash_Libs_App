@@ -25,7 +25,7 @@ class GamesController < ApplicationController
   # GET /games/new.json
   def new
     @game = Game.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @game }
@@ -41,9 +41,14 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(params[:game])
-
+    sheet = Sheet.new({:player_id => params[:player_id]})
+    @game.sheets << sheet
+    player = Player.find_by_id(params[:player_id])
+    player.sheets << sheet
+    player.save
+    
     respond_to do |format|
-      if @game.save
+      if @game.save 
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
         format.json { render json: @game, status: :created, location: @game }
       else

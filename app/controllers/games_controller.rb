@@ -14,7 +14,8 @@ class GamesController < ApplicationController
   # GET /games/1.json
   def show
     @game = Game.find(params[:id])
-
+    @players = Player.all
+    @sheet = Sheet.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @game }
@@ -41,9 +42,9 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(params[:game])
-    sheet = Sheet.new({:player_id => params[:player_id]})
+    sheet = Sheet.new
     @game.sheets << sheet
-    player = Player.find_by_id(params[:player_id])
+    player = Player.find_by_id(session[:player_id])
     player.sheets << sheet
     player.save
     

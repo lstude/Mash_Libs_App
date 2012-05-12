@@ -11,6 +11,9 @@
     </div>
   <% end %>
 
+<% session[:player_id] = params[:player_id] %>
+Player <%= session[:player_id] %>
+
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>

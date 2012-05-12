@@ -5,6 +5,11 @@
   <%= @game.name %>
 </p>
 
+<%= form_for (@sheet) do |sheet| %>
+<%= sheet.label "Select Another Player" %>
+<%= sheet.collection_select(:player_id, @players, :id, :name) %>
+<p><%= sheet.submit "Play"%> </p>
+<% end %>
 
 <!-- <%= link_to 'Edit', edit_game_path(@game) %> | -->
 <%= link_to 'Back', games_path %>

@@ -1,15 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Game Name:</b>
   <%= @game.name %>
 </p>
 
+<p>
+	<b>Players Currently In the Game:</b>
+	<ul>
+		<% @game.players.each do |player| %>
+		<li><%= player.name %></li>
+		<% end %>
+	</ul>
+
 <%= form_for (@sheet) do |sheet| %>
-<%= sheet.label "Select Another Player" %>
+<%= sheet.label "Add Another Player" %>
 <%= sheet.collection_select(:player_id, @players, :id, :name) %>
-<p><%= sheet.submit "Play"%> </p>
+<%= sheet.hidden_field :game_id, :value => @game.id %> <!-- this creates a hidden text field called "game id" and adds that game ID to the show page !-->
+<p><%= sheet.submit "Add"%> </p>
 <% end %>
+
+<p><%= link_to "Click Here To Play, #{Player.find_by_id(session[:player_id]).name}", edit_sheet_path %> </p>
+
 
 <!-- <%= link_to 'Edit', edit_game_path(@game) %> | -->
 <%= link_to 'Back', games_path %>

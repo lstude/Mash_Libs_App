@@ -44,7 +44,7 @@ class SheetsController < ApplicationController
 
     respond_to do |format|
       if @sheet.save
-        format.html { redirect_to @sheet, notice: 'Sheet was successfully created.' }
+        format.html { redirect_to @sheet.game, notice: 'Sheet was successfully created.' }
         format.json { render json: @sheet, status: :created, location: @sheet }
       else
         format.html { render action: "new" }

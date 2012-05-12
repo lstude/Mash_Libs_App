@@ -1,0 +1,54 @@
+<h1>Your Game</h1>
+<h2>Here are the instructions to play the game!</h2>
+
+
+<!-- <li><b>
+	Who:
+	<li>
+	Answer:
+	<li><li>
+    What:
+<li>
+	Answer:
+<li><li>
+    Where:
+<li>
+	Answer:
+<li><li>
+    When:
+<li>
+	Answer:
+<li><li>
+    Why:
+<li>
+	Answer:
+</li><li></b> -->
+
+    <!-- <th>Player</th>
+       <th>Game</th> -->
+    
+
+<% @sheets.each do |sheet| %>
+  <tr>
+    <td><%= sheet.q_who %></td>
+    <td><%= sheet.q_what %></td>
+    <td><%= sheet.q_where %></td>
+    <td><%= sheet.q_when %></td>
+    <td><%= sheet.q_why %></td>
+    <td><%= sheet.a_who %></td>
+    <td><%= sheet.a_what %></td>
+    <td><%= sheet.a_where %></td>
+    <td><%= sheet.a_when %></td>
+    <td><%= sheet.a_why %></td>
+    <td><%= sheet.player_id %></td>
+    <td><%= sheet.game_id %></td>
+    <td><%= link_to 'Show', sheet %></td>
+    <td><%= link_to 'Edit', edit_sheet_path(sheet) %></td>
+    <td><%= link_to 'Destroy', sheet, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sheet', new_sheet_path %>

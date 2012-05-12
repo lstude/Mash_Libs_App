@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  q_who: MyString
+  q_what: MyString
+  q_where: MyString
+  q_when: MyString
+  q_why: MyString
+  a_who: MyString
+  a_what: MyString
+  a_where: MyString
+  a_when: MyString
+  a_why: MyString
+  player_id: 1
+  game_id: 1
+
+two:
+  q_who: MyString
+  q_what: MyString
+  q_where: MyString
+  q_when: MyString
+  q_why: MyString
+  a_who: MyString
+  a_what: MyString
+  a_where: MyString
+  a_when: MyString
+  a_why: MyString
+  player_id: 1
+  game_id: 1

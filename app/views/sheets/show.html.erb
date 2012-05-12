@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Player:</b>
+  <%= @sheet.player_id %>
+</p>
+
+<p>
+  <b>Game:</b>
+  <%= @sheet.game_id %>
+</p>
+<br>
+<p>
+  <b>Who</b>
+  <%= @sheet.q_who %>
+</p>
+
+<p>
+  <b>Answer:</b>
+  <%= @sheet.a_who %>
+</p>
+<br>
+<p>
+  <b>What</b>
+  <%= @sheet.q_what %>
+</p>
+
+<p>
+  <b>Answer:</b>
+  <%= @sheet.a_what %>
+</p>
+<br>
+<p>
+  <b>Where</b>
+  <%= @sheet.q_where %>
+</p>
+
+<p>
+  <b>Answer:</b>
+  <%= @sheet.a_where %>
+</p>
+<br>
+<p>
+  <b>When</b>
+  <%= @sheet.q_when %>
+</p>
+
+<p>
+  <b>Answer:</b>
+  <%= @sheet.a_when %>
+</p>
+<br>
+<p>
+  <b>Why</b>
+  <%= @sheet.q_why %>
+</p>
+
+<p>
+  <b>Answer:</b>
+  <%= @sheet.a_why %>
+</p>
+
+
+<%= link_to 'Edit', edit_sheet_path(@sheet) %> |
+<%= link_to 'Back', sheets_path %>

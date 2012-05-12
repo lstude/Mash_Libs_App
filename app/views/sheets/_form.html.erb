@@ -1,0 +1,66 @@
+<%= form_for(@sheet) do |f| %>
+  <% if @sheet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sheet.errors.count, "error") %> prohibited this sheet from being saved:</h2>
+
+      <ul>
+      <% @sheet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="field">
+    <%= f.label :player_id %><br />
+    <%= f.number_field :player_id %>
+  </div>
+  <div class="field">
+    <%= f.label :game_id %><br />
+    <%= f.number_field :game_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :q_who, "Who" %><br />
+    <%= f.text_field :q_who %>
+  </div>
+ <div class="field">
+    <%= f.label :a_who, "Answer:" %><br />
+    <%= f.text_field :a_who %>
+  </div>
+  <div class="field">
+    <%= f.label :q_what, "What" %><br />
+    <%= f.text_field :q_what %>
+  </div>
+  <div class="field">
+    <%= f.label :a_what, "Answer:" %><br />
+    <%= f.text_field :a_what %>
+  </div>
+  <div class="field">
+    <%= f.label :q_where, "Where" %><br />
+    <%= f.text_field :q_where %>
+  </div>
+<div class="field">
+    <%= f.label :a_where, "Answer:" %><br />
+    <%= f.text_field :a_where %>
+  </div>
+  <div class="field">
+    <%= f.label :q_when, "When" %><br />
+    <%= f.text_field :q_when %>
+  </div>
+<div class="field">
+    <%= f.label :a_when, "Answer:" %><br />
+    <%= f.text_field :a_when %>
+  </div>
+  <div class="field">
+    <%= f.label :q_why, "Why" %><br />
+    <%= f.text_field :q_why %>
+  </div>
+  <div class="field">
+    <%= f.label :a_why, "Answer:" %><br />
+    <%= f.text_field :a_why %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -12,12 +12,14 @@
   <% end %>
 
  <div class="field">
-    <%= f.label :player_id %><br />
-    <%= f.number_field :player_id %>
+    <%#= f.label :player_id %>
+    <!-- <%#= f.number_field :player_id %> -->
+	<p>Player Name: <%= @sheet.player.name %></p>
   </div>
   <div class="field">
-    <%= f.label :game_id %><br />
-    <%= f.number_field :game_id %>
+    <!-- <%#= f.label :game_id %><br /> -->
+    <!-- <%#= f.number_field :game_id %> -->
+	<p>Game Name: <%= @sheet.game.name %></p>
   </div>
 
   <div class="field">

@@ -20,7 +20,7 @@
 <p><%= sheet.submit "Add"%> </p>
 <% end %>
 
-<p><%= link_to "Click Here To Play, #{Player.find_by_id(session[:player_id]).name}", edit_sheet_path %> </p>
+<p><%= link_to "Click Here To Play, #{@player.name}", edit_sheet_path(@mysheet) %> </p>
 
 
 <!-- <%= link_to 'Edit', edit_game_path(@game) %> | -->

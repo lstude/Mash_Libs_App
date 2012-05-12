@@ -16,6 +16,8 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @players = Player.all
     @sheet = Sheet.new
+    @player = Player.find_by_id(session[:player_id])
+    @mysheet = Sheet.find_by_game_id_and_player_id(@game, @player)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @game }

@@ -41,11 +41,10 @@ class PlayersController < ApplicationController
   # POST /players.json
   def create
     @player = Player.new(params[:player])
-     
-  
+
     respond_to do |format|
       if @player.save
-        if session[:player_id] == nil
+        if session[:player_id]
            session[:player_id] = @player.id
          end
         format.html { redirect_to games_path, notice: 'Player was successfully created.' }

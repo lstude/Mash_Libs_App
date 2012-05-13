@@ -11,14 +11,11 @@
     </div>
   <% end %>
 
-<% session[:player_id] = params[:player_id] %>
-Player <%= session[:player_id] %>
+Player: <%= Player.find(session[:player_id]).name %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <br><%= f.label :name, "Name Your Game:" %><br/>
     <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn-danger" %>
   </div>
 <% end %>

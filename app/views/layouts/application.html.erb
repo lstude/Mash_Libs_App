@@ -2,17 +2,23 @@
 <html>
 <head>
   <title>MashLibsApp</title>
+  <%= stylesheet_link_tag    "bootstrap", :media => "all" %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<div class = "navbar-inner"><div class = "container"><h1>MashLibs</h1></div></div>
+<div class = "container">
+
+
 <% if Player.find_by_id(session[:player_id]) !=nil %>
 <%= "Hello, #{Player.find_by_id(session[:player_id]).name}!" %>
 <% end %>
 
 <%= yield %>
+</div>
 
 </body>
 </html>

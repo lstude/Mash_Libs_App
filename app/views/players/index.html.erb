@@ -1,4 +1,4 @@
-<h1>Log In Below</h1>
+<br><h3>Log In Below</h3></br>
 
 <table>
   <tr>
@@ -12,11 +12,14 @@
   <tr>
     <td><%= player.name %></td>
     <td><%= link_to 'Log In', player %></td>
-  
+  <td><%= link_to ':: Delete Player', player, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
+
 <% end %>
+
+
 </table>
 
 <br />
 
-<%= link_to 'Add New Player', new_player_path %>
+<%= button_to 'Add New Player', new_player_path, :method => :get, :class => "btn-primary" %>

@@ -17,7 +17,7 @@ class GamesController < ApplicationController
     @players = Player.all
     @sheet = Sheet.new
     @player = Player.find_by_id(session[:player_id])
-    @mysheet = Sheet.find_by_game_id_and_player_id(@game, @player)
+            @mysheet = Sheet.find_by_game_id_and_player_id(@game, @player)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @game }
@@ -44,14 +44,12 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(params[:game])
-    sheet = Sheet.new
-    @game.sheets << sheet
-    player = Player.find_by_id(session[:player_id])
-    player.sheets << sheet
-    player.save
+    @player = session[:player_id]
     
     respond_to do |format|
-      if @game.save 
+      if @game.save
+        @sheet = Sheet.create(player_id: @player, game_id: @game.id)
+        session[:game_id] = @game.id
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
         format.json { render json: @game, status: :created, location: @game }
       else

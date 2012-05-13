@@ -14,9 +14,9 @@ class PlayersController < ApplicationController
   # GET /players/1.json
   def show
     @player = Player.find(params[:id])
-
+    session[:player_id] = @player.id
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { redirect_to games_path }
       format.json { render json: @player }
     end
   end
@@ -41,10 +41,14 @@ class PlayersController < ApplicationController
   # POST /players.json
   def create
     @player = Player.new(params[:player])
-
+     
+  
     respond_to do |format|
       if @player.save
-        format.html { redirect_to @player, notice: 'Player was successfully created.' }
+        if session[:player_id] == nil
+           session[:player_id] = @player.id
+         end
+        format.html { redirect_to games_path, notice: 'Player was successfully created.' }
         format.json { render json: @player, status: :created, location: @player }
       else
         format.html { render action: "new" }

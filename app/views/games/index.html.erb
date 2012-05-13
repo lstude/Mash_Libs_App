@@ -11,7 +11,7 @@
 <% @games.each do |game| %>
   <tr>
     <td><%= game.name %></td>
-    <!-- <td><%= link_to 'Show', game %></td> -->
+    <td><%= link_to 'Show', game %></td>
     <!-- <td><%= link_to 'Edit', edit_game_path(game) %></td> -->
     <td><%= link_to 'Delete Game', game, confirm: 'Are you sure you wish to delete this game?', method: :delete %></td>
   </tr>

@@ -88,4 +88,11 @@ class GamesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def mashup
+    @game = Game.find(params[:id])
+    @mashup = @game.mashup 
+  end
+  
 end
+

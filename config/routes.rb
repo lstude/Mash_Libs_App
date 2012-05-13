@@ -1,10 +1,16 @@
 MashLibsApp::Application.routes.draw do
   resources :sheets
 
-  resources :games
+  resources :games do 
+    member do 
+      get "mashup"
+    end
+      
+  end
 
   resources :players
+ 
 
-  root :to => 'sheets#index'
+  root :to => 'players#index'
 
 end

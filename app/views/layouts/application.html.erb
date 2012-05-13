@@ -8,6 +8,10 @@
 </head>
 <body>
 
+<% if Player.find_by_id(session[:player_id]) !=nil %>
+<%= "Hello, #{Player.find_by_id(session[:player_id]).name}!" %>
+<% end %>
+
 <%= yield %>
 
 </body>

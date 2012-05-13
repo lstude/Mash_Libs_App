@@ -1,8 +1,8 @@
-<h1>Players</h1>
+<h1>Log In Below</h1>
 
 <table>
   <tr>
-    <th>Here are the people in your game:</th>
+    <th>Add Your Name to Log In:</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,13 +11,12 @@
 <% @players.each do |player| %>
   <tr>
     <td><%= player.name %></td>
-    <td><%= link_to 'Show', player %></td>
-    <td><%= link_to 'Edit', edit_player_path(player) %></td>
-    <td><%= link_to 'Destroy', player, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Log In', player %></td>
+  
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Player', new_player_path %>
+<%= link_to 'Add New Player', new_player_path %>

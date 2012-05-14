@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Player:</b>
-  <%= @sheet.player_id %>
-</p>
+  <!-- <b>Player:</b>
+    <%#= Player.find_by_id(@sheet.player_id).name %>
+  </p>
 
-<p>
-  <b>Game:</b>
-  <%= @sheet.game_id %>
+  <p>
+    <b>Game Name:</b>
+    <%#= Game.find_by_id(@sheet.game_id).name %> -->
 </p>
 <br>
 <p>
@@ -60,6 +60,5 @@
   <%= @sheet.a_why %>
 </p>
 
-
-<%= link_to 'Edit', edit_sheet_path(@sheet) %> |
-<%= link_to 'Back', sheets_path %>
+<br>
+<%= button_to 'Looks Good, Mash It Up!', mashup_game_url(@sheet.game_id), :method => :get, :class => "btn-primary" %>
